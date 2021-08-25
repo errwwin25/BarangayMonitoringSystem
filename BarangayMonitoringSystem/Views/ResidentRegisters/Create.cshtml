@@ -1,0 +1,175 @@
+﻿@model BarangayMonitoringSystem.Models.ResidentRegister
+
+@{
+    Layout = null;
+    DateTime currentdate = (DateTime.Today);
+    string datepublished = currentdate.ToString("MMMM/dd/yyyy");
+
+  
+
+   
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/createui.css" />
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="banner">
+            <center>
+                <h4>Register New Resident</h4>
+            </center>
+        </div>
+               
+              
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="jumbotron">
+
+
+                <div class="namegroup">
+
+                 
+
+                    @Html.LabelFor(model => model.ResidentFirstName, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ResidentFirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "First name..." } })
+                        @Html.ValidationMessageFor(model => model.ResidentFirstName, "", new { @class = "text-danger" })
+                    </div>
+               
+                    @Html.LabelFor(model => model.ResidentMiddleName, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ResidentMiddleName, new { htmlAttributes = new { @class = "form-control", placeholder = "Middle name..." } })
+                        @Html.ValidationMessageFor(model => model.ResidentMiddleName, "", new { @class = "text-danger" })
+                    </div>
+               
+
+               
+                    @Html.LabelFor(model => model.ResidentLastName, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ResidentLastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Last name..." } })
+                        @Html.ValidationMessageFor(model => model.ResidentLastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="fieldcontainer">
+                    @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", placeholder = "Age.." } })
+                        @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+              
+                <fieldset>
+                    <legend> Gender </legend>
+                       
+
+                        Male
+                        @Html.RadioButtonFor(model => model.Gender, "Male")
+
+                        Female
+                        @Html.RadioButtonFor(model => model.Gender, "Female")
+
+
+                </fieldset>
+                <div class="fieldcontainer">
+                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", placeholder = "Address.." }  })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Religion, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Religion, new { htmlAttributes = new { @class = "form-control", placeholder = "Religion.." } })
+                        @Html.ValidationMessageFor(model => model.Religion, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+               
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Occupation, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Occupation, new { htmlAttributes = new { @class = "form-control", placeholder = "Occupation.." } })
+                        @Html.ValidationMessageFor(model => model.Occupation, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nationality, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Nationality, new { htmlAttributes = new { @class = "form-control", placeholder = "Nationality.." } })
+                        @Html.ValidationMessageFor(model => model.Nationality, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Birthdate, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Birthdate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Birthdate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+              <br /> <br /><br /><br />
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.PlaceofBirth, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.PlaceofBirth, new { htmlAttributes = new { @class = "form-control" }, placeholder = "Birth place..." })
+                        @Html.ValidationMessageFor(model => model.PlaceofBirth, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Contactnumber, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Contactnumber, new { htmlAttributes = new { @class = "form-control" }, placeholder = "Contact Number..." })
+                        @Html.ValidationMessageFor(model => model.Contactnumber, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <fieldset>
+                     <legend> Civil Status </legend>
+                    Single    @Html.RadioButtonFor(model => model.Status, "Single")
+
+                    Married  @Html.RadioButtonFor(model => model.Status, "Married")
+
+                    Divorced   @Html.RadioButtonFor(model => model.Status, "Divorced")
+
+                    Widowed    @Html.RadioButtonFor(model => model.Status, "Widowed")
+                    </fieldset>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="inputbuttonclass" />
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                </div>
+            </div>
+
+    }
+    
+    
+</body>
+</html>

@@ -1,0 +1,117 @@
+﻿@model BarangayMonitoringSystem.ViewModels.ResidentViewModels
+
+@{
+    Layout = null;
+  
+}
+   
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/createui.css" />
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <div class="jumbotron">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Issuing </h4>
+            @Html.ActionLink("Back to List", "Index")
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.ResidentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.documents.ResidentId, Model.ResidentList, "Please select a resident", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.Residentfirstname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.FullName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.documents.FullName, Model.ResidentList, "Please select a resident", new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.Residentfirstname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+          
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.Residentfirstname, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.documents.Residentfirstname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.Residentfirstname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.Residentmiddlename, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.documents.Residentmiddlename, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.Residentmiddlename, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.Residentlastname, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.documents.Residentlastname, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.Residentlastname, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.Cedula, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.documents.Cedula, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.Cedula, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.BarangayId, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.documents.BarangayId, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.BarangayId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.RegisteredVoter, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.documents.RegisteredVoter, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.RegisteredVoter, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.documents.BGClearance, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.documents.BGClearance, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.documents.BGClearance, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="inputbuttonclass" />
+                </div>
+            </div>
+        </div>
+        }
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+﻿@model BarangayMonitoringSystem.Models.Blotterreports
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <style>
+     
+    </style>
+    <link rel="stylesheet" type="text/css" href="~/Content/deleteui.css"/>
+    <link rel="stylesheet" type="text/css" href="~/Content/alertprompt.css" />
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="alert">
+            <span class="closebtn"></span>
+            <strong> <font face="Century-Gothic">Are you sure you want to delete this record? </font> </strong>
+        </div>
+
+        <h4>Incident Report</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Blotternumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Blotternumber)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentFirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentFirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentMiddleName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentMiddleName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentLastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentLastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Incidentlocation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Incidentlocation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Incidenttype)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Incidenttype)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Remarks)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Datereported)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Datereported)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateIncident)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateIncident)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                @Html.ActionLink("Back to List", "Index") |
+                <input type="submit" value="Delete" class="inputbuttonclass" /> 
+               
+            </div>
+        }
+    </div>
+</body>
+</html>

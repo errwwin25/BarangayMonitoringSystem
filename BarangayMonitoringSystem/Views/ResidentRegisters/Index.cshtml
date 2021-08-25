@@ -1,0 +1,191 @@
+﻿@* @model IEnumerable<BarangayMonitoringSystem.Models.ResidentRegister> *@ 
+
+@using PagedList.Mvc;
+
+@model PagedList.IPagedList<BarangayMonitoringSystem.Models.ResidentRegister>
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+ 
+    <link rel="stylesheet" type="text/css" href="~/Content/indexcrud.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/PagedList.css" />
+    <style>
+           a {
+           color:white;
+            text-decoration: none;
+       }
+   a:link, a:visited, a:hover, a:focus, a:active 
+     {
+       text-decoration: none;
+  color: white;
+  font-family:'Century Gothic';
+
+      }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebarlogo"> <img src="~/Content/logobrgy1.png" alt="brgy" style="width:170px" id="sidebarlogo"></div>
+        <ul>
+            <li> @Html.ActionLink("Dashboard", "Index", "Home") </li>
+            <li> @Html.ActionLink("Resident Records", "Index", "ResidentRegisters", new { @Style = "background-color:green" }) </li>
+            <li>  @Html.ActionLink("Issuance of Clearances", "Index", "Clearances") </li>
+            <li>  @Html.ActionLink("Incident Reports", "Index", "Blotterreports") </li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li> @Html.ActionLink("Logout", "Login1", "Login")</li>
+
+        </ul>
+    </div>
+    <div style="margin-left:25%"  id="jumbotron">
+
+    @Html.ActionLink("Register New Resident", "Create")
+        </div>
+
+
+    @using (Html.BeginForm("Index", "ResidentRegisters", FormMethod.Get))
+    {
+        <div style="margin-left:25% " id="searchfunction">
+      <p class="searchfunction">
+          <b> Search Resident:</b> @Html.TextBox("SearchString")
+            <input type="submit" value="Search" class="inputbuttonclass"/>
+
+          @Html.ActionLink("Reset", "Index")
+           </p>
+            </div>
+    }
+
+    
+    <center><table class="table" id="residents"  style="margin-left:25% ">
+        
+        <tr>
+            <th>
+                @Html.ActionLink("Id", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+            <th>
+                @Html.ActionLink("First Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+            <th>
+                @Html.ActionLink("Middle Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Last Name", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Age", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Gender", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Address", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+               @Html.ActionLink("Religion", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Civil Status", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Occupation", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Nationality", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+               @Html.ActionLink("Birthdate", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+
+            </th>
+            <th>
+                @Html.ActionLink("Place of Birth", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Contact Number", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ResidentFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResidentMiddleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ResidentLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Religion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Occupation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nationality)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birthdate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceofBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contactnumber)
+            </td>
+            <td>
+                <div id="crudbuttons">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @Style = "background-color:blue" })
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @Style = "background-color:green" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @Style = "background-color:red" })
+                    </div>
+</td>
+
+
+        </tr>
+
+    }
+    
+    </table>
+        <br />
+                         
+    </center>
+    <div style="margin-left:50%"  class="pagination">
+        <p class="pagebar">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+               
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+        </p>
+</div>
+</body>
+</html>

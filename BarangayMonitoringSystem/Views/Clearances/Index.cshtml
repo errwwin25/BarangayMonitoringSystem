@@ -1,0 +1,124 @@
+﻿@model BarangayMonitoringSystem.ViewModels.ClearanceResidentsViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/indexcrud.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/PagedList.css" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebarlogo"> <img src="~/Content/logobrgy1.png" alt="brgy" style="width:170px" id="sidebarlogo"></div>
+        <ul>
+            <li> @Html.ActionLink("Dashboard", "Index", "Home") </li>
+            <li> @Html.ActionLink("Resident Records", "Index", "ResidentRegisters") </li>
+            <li>  @Html.ActionLink("Issuance of Clearances", "Index", "Clearances", new { @Style = "background-color:green" }) </li>
+            <li>  @Html.ActionLink("Incident Reports", "Index", "Blotterreports") </li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li> @Html.ActionLink("Logout", "Login1", "Login")</li>
+
+        </ul>
+    </div>
+    <div style="margin-left:25%" id="jumbotron">
+
+        @Html.ActionLink("Add Resident", "Create")
+    </div>
+
+    <div class="flex-container" id="menu1">
+      
+        <table id="residents">
+            <thead class="listofresidents">
+                <tr>
+
+                    <th>@Html.DisplayNameFor(m => Model.resident.FirstOrDefault().FullName)</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var resident in Model.resident)
+                {
+                    <tr>
+
+                        <td>@resident.FullName</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    
+    
+
+    <center>
+        <table class="residents" id="residents" style="margin-left:25% ">
+            <tr>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.documentsclearances.FirstOrDefault().ResidentId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.documentsclearances.FirstOrDefault().FullName)
+                </th>
+               
+                <th>
+                    @Html.DisplayNameFor(model => model.documentsclearances.FirstOrDefault().Cedula)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.documentsclearances.FirstOrDefault().BarangayId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.documentsclearances.FirstOrDefault().RegisteredVoter)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.documentsclearances.FirstOrDefault().BGClearance)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.documentsclearances)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ResidentId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cedula)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BarangayId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RegisteredVoter)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BGClearance)
+                    </td>
+                    <td>
+                        <div id="crudbuttons">
+                          
+                            @Html.ActionLink("Details", "Details", new { id = item.ClearanceId }, new { @Style = "background-color:green" }) 
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ClearanceId }, new { @Style = "background-color:red" })
+                            </div>
+</td>
+                </tr>
+            }
+
+  </table>
+      
+       
+
+        </center>
+        </div>
+</body>
+</html>

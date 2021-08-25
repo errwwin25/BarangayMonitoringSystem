@@ -1,0 +1,98 @@
+﻿      h4 
+        {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+              h3
+        {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           color: red ;
+        }
+
+               h1
+        {
+            font-family:'Century Gothic'
+        }
+
+        body {
+           background-color:#0f3569;
+        }
+
+          dl 
+       {
+           height: 480px;
+            display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+    column-count: 3;
+    column-gap: 80px;
+       }
+
+          dt {
+             font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 17px;
+   width: 10em;
+
+         padding-top: 5px;
+        padding-bottom: 2px; 
+        padding-left: 10px;
+         padding-right: 10px;
+
+        border-radius: 20px;
+        border:solid 1px black;
+
+        background-color: #e4f139;
+        font-weight: bold;
+        margin-top: 30px;
+       
+        }
+
+        dd {
+           font-family: 'Century Gothic', Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    margin: 2px;
+    border: 1px solid;
+    padding: 12px;
+   text-align:center;
+    font-weight: bold;
+    background-color: #e6e6e6;
+     width: 11em;
+    
+        }
+           .jumbotron 
+{
+ background-color:#3f9bff;
+         padding: 20px;
+            margin: 0 auto;
+            width: 80em;
+           
+       }
+
+            a:link, a:visited {
+  background-color: #1c58aa;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic'
+}
+
+                input.inputbuttonclass 
+         {
+              
+   display: inline-block;
+  position: relative;
+  text-align:center;
+    width: 8em;  
+    height: 3em;
+     margin-top:10px;
+      margin-right:10px;
+      
+   padding: 2vh;
+   float:right;
+  cursor: pointer; 
+         }
+
+a:hover, a:active {
+  background-color: dimgrey;
+}

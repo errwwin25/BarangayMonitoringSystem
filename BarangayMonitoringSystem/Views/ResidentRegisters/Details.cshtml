@@ -1,0 +1,152 @@
+﻿@model BarangayMonitoringSystem.Models.ResidentRegister
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/detailsui.css" />
+</head>
+<body>
+    <div class="banner">
+        <center> <h1>Resident Record</h1> </center>
+    </div>
+
+    <div class="jumbotron">
+        <p class="editbuttons">
+           @* @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) *@
+            @Html.ActionLink("Back to List", "Index")
+
+        </p>
+        <h4> Full Name</h4>
+        <h3>  @Html.DisplayFor(model => model.ResidentFirstName)  @Html.DisplayFor(model => model.ResidentMiddleName) @Html.DisplayFor(model => model.ResidentLastName) </h3>
+       
+           
+       
+
+        <hr />
+
+
+        <dl class="multi-column">
+            <dt>
+                @Html.DisplayNameFor(model => model.ID)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentFirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentFirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentMiddleName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentMiddleName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentLastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentLastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gender)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gender)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Religion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Religion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Occupation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Occupation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Nationality)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nationality)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Birthdate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Birthdate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PlaceofBirth)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PlaceofBirth)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Contactnumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Contactnumber)
+            </dd>
+        </dl>
+
+    </div>
+
+</body>
+</html>

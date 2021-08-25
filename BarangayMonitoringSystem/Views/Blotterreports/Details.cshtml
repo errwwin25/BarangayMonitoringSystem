@@ -1,0 +1,126 @@
+﻿@model BarangayMonitoringSystem.Models.Blotterreports
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/documentui.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/detailsui.css" />
+</head>
+<body>
+    <div class="jumbotron">
+        <p class="editbuttons">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Blotternumber }) |
+            @Html.ActionLink("Back to List", "Index")
+
+        </p>
+        <h4>Incident Reports</h4>
+      
+        <hr />
+
+        
+
+        <dl class="dl-horizontal">
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Blotternumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Blotternumber)
+            </dd>
+
+          
+            <dt>
+                @Html.DisplayNameFor(model => model.FullName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentFirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentFirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentMiddleName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentMiddleName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentLastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentLastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Incidentlocation)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Incidentlocation)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Incidenttype)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Incidenttype)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Remarks)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Remarks)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Datereported)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Datereported)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DateIncident)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DateIncident)
+            </dd>
+
+        </dl>
+
+      
+    </div>
+</body>
+</html>

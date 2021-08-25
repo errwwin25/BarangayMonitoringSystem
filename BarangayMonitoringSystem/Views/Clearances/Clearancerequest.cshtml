@@ -1,0 +1,66 @@
+﻿@model BarangayMonitoringSystem.Models.Clearances
+
+
+@{
+    Layout = null;
+    DateTime currentdate = (DateTime.Today);
+    string datepublished = currentdate.ToString("MMMM/dd/yyyy");
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Certificaterequest</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/documentui.css" />
+</head>
+<body>
+    <div>
+        <h4>Issuance of Clearance</h4>
+        <hr />
+        <div class="documentissued">
+            <img src="~/Content/logobrgy1.png" alt="brgy" style="width:150px">
+            <b>
+                <p>Republic of the Philippines</p>
+                <p>Province of Pampanga</p>
+                <p>Angeles City</p>
+                <p>Barangay Sto. Cristo</p>
+            </b>
+            <br />
+            <h2> Barangay Clearance</h2>
+            <p>
+                This is to certify that <b>@Html.DisplayFor(model => model.FullName)</b> is of legal age. Filipino and a bonified resident of Barangay Name and that it has no derogatory records in the Barangay prior to the data of issuance of this certificate.
+This certificate is issued in his/her request for:
+            </p>
+           
+              Employment 
+            
+            <p>
+                Issued this <b>@datepublished</b> at Barangay Sto.Cristo, Angeles City, Pampanga.
+
+            </p>
+            <br /><br />
+            <p>
+                ___________________ <br />
+                   Signature
+            </p>
+               <p style="float:left"> Lazatine <br />
+                                   Barangay Captain  </p>
+
+
+           
+            <p style="float:right">
+                OR Date Issued: @datepublished <br />
+                Cedula Date Issued: @datepublished
+                </p>
+
+</div>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ClearanceId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</body>
+</html>

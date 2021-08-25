@@ -1,0 +1,89 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Departmento Munitorum </title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/sidebar.css" />
+  
+    </head>
+
+<body>
+    <form method="post">
+     
+
+    </form>
+   
+
+    <div class="sidenav">
+     <div class="sidebarlogo"> <img src="~/Content/logobrgy1.png" alt="brgy" style="width:170px" id="sidebarlogo"></div>
+        <ul>
+          
+            <li> @Html.ActionLink("Dashboard", "Index", "Home", new { @Style = "background-color:green" }) </li>
+    <li> @Html.ActionLink("Resident Records", "Index", "ResidentRegisters")</li>
+    <li>  @Html.ActionLink("Issuance of Clearances", "Index", "Clearances") </li>
+    <li>   @Html.ActionLink("Incident Reports", "Index", "Blotterreports")</li>
+    <li>@Html.ActionLink("About", "About", "Home")</li>
+    <li> @Html.ActionLink("Logout", "Login1", "Login")</li>
+
+</ul>
+
+    </div>
+
+       <div id="banner" style="margin-left:25%"> <h2>Welcome to Barangay Sto. Cristo, Angeles City</h2></div>
+    <div id="banner" style="margin-left:25%"> <h4><i>Mayap na aldo kekakyu</i></h4></div>
+   
+        <div class="jumbotron">
+
+            <div class="statbox1">
+                <h3> Registered Residents</h3>
+                <p class="statistics">@ViewBag.Stats </p>
+            </div>
+
+            <div class="statbox2">
+
+                <h3> Incidents Reported</h3>
+                <center>  <p class="statistics">@ViewBag.incidentstats </p></center> 
+
+            </div>
+            <div class="statbox3">
+
+                <h3> Verified Residents </h3>
+                <p class="statistics">@ViewBag.clearedstats </p>
+            </div>
+
+            <div class="statbox1">
+
+                <h3> Registered Voters </h3>
+                <p class="statistics">@ViewBag.voters </p>
+            </div>
+
+            <div class="statbox1">
+
+                <h3> Employed</h3>
+                <p class="statistics">@ViewBag.employed </p>
+            </div>
+
+            <div class="statbox1">
+
+                <h3> Unemployed</h3>
+                <p class="statistics">@ViewBag.unemployed </p>
+            </div>
+            <div class="statbox1">
+
+                <h3> Male Residents </h3>
+                <p class="statistics">@ViewBag.males </p>
+            </div>
+            <div class="statbox1">
+
+                <h3> Female Residents</h3>
+                <p class="statistics">@ViewBag.females</p>
+            </div>
+        </div>
+    
+</body>
+</html>

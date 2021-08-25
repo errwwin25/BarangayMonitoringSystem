@@ -1,0 +1,108 @@
+﻿@model BarangayMonitoringSystem.Models.Logindb
+
+@{
+    Layout = null;
+
+
+}
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+
+    <style>
+
+          .block {
+  display: block;
+  width: 10%;
+  border: none;
+  background-color: #4CAF50;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  border: 2px solid black;
+}
+
+        .block:hover  {
+            background-color: #d3cfcf;
+}
+        body { background-color: #313866}
+
+        h4 { font-family: Verdana; color:white}
+
+        h2 { font-family: 'Courier'; color:white}
+
+         a:link, a:visited {
+  background-color: #1c58aa;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic'
+}
+
+         a:hover, a:active {
+  background-color: cornflowerblue;
+}
+
+         div {
+  border-radius: 3px;
+  background-color: #3b4168;
+  padding: 20px;
+}
+
+         input[type=text], select {
+  width: 14%;
+  padding: 5px 10px;
+  margin: 2px ;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+    </style>
+
+</head>
+<body>
+    <picture>
+        <center><img src = "@Url.Content("~/Content/agora.png")"></center>
+
+        <center> <h2> Barangay Information System</h2></center>
+    </picture>
+
+    <form action="/Home/Index">
+
+        <center>
+            <div>
+                <h4> <label for="user">Username: </label></h4>
+                <input type="text" name="user" value="@Request.Form["user"]" placeholder="Your username..." required>
+                @Html.ValidationMessage("user")
+
+                <br>
+
+                <h4><label for="pass">Password: </label> </h4>
+                <input type="text" name="pass" value="@Request.Form["pass"]" placeholder="Your password..." required>
+                @Html.ValidationMessage("pass")
+
+                <br>
+                <br>
+                
+                <div id="buttonclass">
+                    <button class="block" type="submit"  method="Post">
+                    <b> Login </b>
+                        </button>
+                </div>
+            </div>
+        </center>
+
+    </form>
+</body>
+</html>
+
+}

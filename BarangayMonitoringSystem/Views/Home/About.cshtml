@@ -1,0 +1,110 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>About</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/sidebar.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/indexcrud.css" />
+</head>
+<body>
+    @{ Html.RenderPartial("Verticalbar"); }
+
+
+    <div class="sidenav">
+        <div class="sidebarlogo"> <img src="~/Content/logobrgy1.png" alt="brgy" style="width:170px" id="sidebarlogo"></div>
+        <ul>
+            <li> @Html.ActionLink("Dashboard", "Index", "Home") </li>
+            <li> @Html.ActionLink("Resident Records", "Index", "ResidentRegisters")</li>
+            <li>  @Html.ActionLink("Resident Clearances", "Index", "Clearances") </li>
+            <li>   @Html.ActionLink("Incident Reports", "Index", "Blotterreports")</li>
+            <li> @Html.ActionLink("About", "About", "Home", new { @Style = "background-color:green" }) </li>
+            <li> @Html.ActionLink("Logout", "Login1", "Login")</li>
+            
+          
+
+        </ul>
+    </div>
+    <div id="announcements">
+
+
+        <left> <h2> Frequently Asked Questions: </h2></left>
+        <left> <h4>What is this application?</h4></left>
+        <left> <p>Agora is a state-of-the-art Barangay Monitoring System that is designed to
+            maximize the process of organizing a barangay's population records. </p></left>
+
+        <left> <h4>How do you apply for an account here?</h4></left>
+        <left>
+            <p>It is simple, all you need to do is to show that you are a verified member of the Barangay Council by 
+            visiting the Barangay Hall and asking the secretary for an application of an account for the system.  </p>
+        </left>
+
+        <left> <h4>Why not just register online?</h4></left>
+        <left>
+            <p>
+               For security reasons, of course.  It is hard to verify if a user that is registering is really
+                a member of the Council or not. Hence the need to visit the Hall.
+            </p>
+        </left>
+    </div>
+
+    <div id="announcements">
+
+
+        <left> <h2> Inquiries </h2></left>
+        <left> <h4>Questions unanswered? No problem.</h4></left>
+        <left>
+            <p>
+                Just contact us, using the following information: <br />
+             
+            </p>
+            <p>
+            <b> Email: </b>   canlas.josephraphael@auf.edu.ph
+
+            </p>
+            <p>
+                <b> Hotline: </b>  099991206
+
+            </p>
+
+        
+               
+           
+            </left>
+
+    </div>
+
+    <div id="announcements">
+        <left> <h1 align="center">  Agora, the next-generation management software.</h1></left>
+        <left>
+            <p class="bodytext"> Agora is a Barangay Information System used to properly track the records of residents living in a specific barangay. </p>
+            <p class="bodytext">  Its features include; </p>
+            <ol>
+                <li>Registration of New Residents </li>
+               
+                <li>  Management of Resident Records</li>
+                
+                <li> Blotter or Incident Reports </li>
+             
+            </ol>
+        </left>
+
+    </div>
+
+
+
+
+    <div id="announcements">
+        <left> <h1> Cyphire Solutions' newest release</h1></left>
+        <left> <h2>Innovation is the Future, the stepping stones to progress.</h2></left>
+
+        @Html.ActionLink("Learn more", "Developersite", "Home", new { area = "" }, new { @class = "buttonclass" })
+    </div>
+        
+</body>
+</html>

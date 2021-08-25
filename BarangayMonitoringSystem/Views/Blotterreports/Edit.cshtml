@@ -1,0 +1,205 @@
+﻿@model BarangayMonitoringSystem.Models.Blotterreports
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <style>
+         input[type=text], select {
+  width: 35em;
+  padding: 5px 10px;
+ height: 2em;
+  margin: 12px 12px;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+ 
+}
+       
+ input[type=number], select {
+  width: 16em;
+  padding: 5px 10px;
+ height: 2em;
+  margin:  12px 12px;
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+  
+}
+
+         .jumbotron 
+{
+             font-family:'Century Gothic';
+             font:bold 22px;
+             
+    background-color:#3f9bff;
+         padding: 20px;
+            margin: 0 auto;
+            width: 800px;
+        border: 1px solid #c0c0c0;
+       }
+          body {
+           background-color:#0f3569;
+        }
+                a:link, a:visited {
+  background-color: #1c58aa;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic'
+}
+                input.inputbuttonclass 
+         {
+              
+   display: inline-block;
+  position: relative;
+  text-align:center;
+    width: 8em;  
+    height: 4em;
+     margin-top:10px;
+      margin-right:10px;
+      margin-left: 15px;
+      
+   padding: 2vh;
+  cursor: pointer; 
+         }
+
+a:hover, a:active {
+  background-color: dimgrey;
+}
+        </style>
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery.datetimepicker.css"/>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="/jquery.js"></script>
+    <script src="/build/jquery.datetimepicker.full.min.js"></script>
+    
+    @section Scripts {
+
+
+        <script type="text/javascript">
+
+     $(document).ready(function () {
+         $('input[type=datetime]').datepicker({
+             dateFormat: "dd/M/yy",
+             changeMonth: true,
+             changeYear: true,
+             yearRange: "-60:+0"
+         });
+
+     });
+        </script>
+
+    }
+
+
+    
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="jumbotron" >
+            <div class="form-horizontal">
+                <h4>Edit Incident Report</h4>
+                
+               <p> @Html.ActionLink("Back to List", "Index" )
+                   <input type="submit" value="Save" class="inputbuttonclass" />
+                  </p>
+                <hr />
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Blotternumber)
+
+            
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ResidentFirstName, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ResidentFirstName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ResidentFirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ResidentMiddleName, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ResidentMiddleName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ResidentMiddleName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ResidentLastName, htmlAttributes: new { @class = "label" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ResidentLastName, new { htmlAttributes = new { @class = "label" } })
+                        @Html.ValidationMessageFor(model => model.ResidentLastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Incidentlocation, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Incidentlocation, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Incidentlocation, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Incidenttype, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Incidenttype, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Incidenttype, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Remarks, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.Remarks, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Remarks, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Datereported, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Datereported, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Datereported, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DateIncident, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DateIncident, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DateIncident, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+            </div>
+            }
+
+            
+</body>
+</html>

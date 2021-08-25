@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Barangaydatabase.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admindb">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Blotterreports">
+          <Key>
+            <PropertyRef Name="Blotternumber" />
+          </Key>
+          <Property Name="Blotternumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResidentFirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ResidentMiddleName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ResidentLastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Incidentlocation" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Incidenttype" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
+          <Property Name="Datereported" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateIncident" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResidentRegisters">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResidentFirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ResidentMiddleName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ResidentLastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Religion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Occupation" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Nationality" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Birthdate" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PlaceofBirth" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ContactNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="BarangaydatabaseStoreContainer">
+          <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admindb" EntityType="Self.Admindb" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blotterreports" EntityType="Self.Blotterreports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResidentRegisters" EntityType="Self.ResidentRegisters" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Barangaydatabase" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__MigrationHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+            <PropertyRef Name="ContextKey" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admindb">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Blotterreport">
+          <Key>
+            <PropertyRef Name="Blotternumber" />
+          </Key>
+          <Property Name="Blotternumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResidentFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResidentMiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResidentLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Incidentlocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Incidenttype" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Datereported" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateIncident" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResidentRegister">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResidentFirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResidentMiddleName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResidentLastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Religion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Occupation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birthdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PlaceofBirth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ContactNumber" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+          <EntitySet Name="Admindbs" EntityType="Self.Admindb" />
+          <EntitySet Name="Blotterreports" EntityType="Self.Blotterreport" />
+          <EntitySet Name="ResidentRegisters" EntityType="Self.ResidentRegister" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BarangaydatabaseStoreContainer" CdmEntityContainer="Entities1">
+          <EntitySetMapping Name="C__MigrationHistory">
+            <EntityTypeMapping TypeName="Barangaydatabase.C__MigrationHistory">
+              <MappingFragment StoreEntitySet="__MigrationHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admindbs">
+            <EntityTypeMapping TypeName="Barangaydatabase.Admindb">
+              <MappingFragment StoreEntitySet="Admindb">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blotterreports">
+            <EntityTypeMapping TypeName="Barangaydatabase.Blotterreport">
+              <MappingFragment StoreEntitySet="Blotterreports">
+                <ScalarProperty Name="Blotternumber" ColumnName="Blotternumber" />
+                <ScalarProperty Name="ResidentFirstName" ColumnName="ResidentFirstName" />
+                <ScalarProperty Name="ResidentMiddleName" ColumnName="ResidentMiddleName" />
+                <ScalarProperty Name="ResidentLastName" ColumnName="ResidentLastName" />
+                <ScalarProperty Name="Incidentlocation" ColumnName="Incidentlocation" />
+                <ScalarProperty Name="Incidenttype" ColumnName="Incidenttype" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="Datereported" ColumnName="Datereported" />
+                <ScalarProperty Name="DateIncident" ColumnName="DateIncident" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResidentRegisters">
+            <EntityTypeMapping TypeName="Barangaydatabase.ResidentRegister">
+              <MappingFragment StoreEntitySet="ResidentRegisters">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ResidentFirstName" ColumnName="ResidentFirstName" />
+                <ScalarProperty Name="ResidentMiddleName" ColumnName="ResidentMiddleName" />
+                <ScalarProperty Name="ResidentLastName" ColumnName="ResidentLastName" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="PlaceofBirth" ColumnName="PlaceofBirth" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

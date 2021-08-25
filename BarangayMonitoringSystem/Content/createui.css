@@ -1,0 +1,180 @@
+﻿      input[type=text], select {
+  width: 16em;
+ padding: 12px 20px;
+margin:  0px 0px 20px 70px;
+ height: 3em;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+   
+            
+}
+       
+ input[type=number], select {
+  width: 16em;
+  padding: 5px 10px;
+ height: 2em;
+  margin:  0px 0px;
+
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+  
+}
+
+ input[type=date], select {
+  width: 16em;
+  padding: 5px 10px;
+ height: 2em;
+  margin:  0px 0px 30px;
+
+  display: inline-block;
+  border: 1px solid blue;
+  border-radius: 4px;
+  
+}
+
+ .fieldcontainer
+ {
+  
+     width: 10em;
+     margin-bottom: 15px;
+     
+ }
+
+         .jumbotron 
+{
+              font-family:'Century Gothic';
+             font: 12px;
+            
+    background-color:#3f9bff;
+       
+          padding: 20px 30px 30px 25px;
+            margin: 0 auto;
+            width: 80em;
+            height: 35em;
+        border: 1px solid #c0c0c0;
+
+        column-gap: 20px;
+        column-count: 3;
+       column-fill: auto;
+        
+       }
+
+         legend
+         {
+             
+        border-radius: 20px;
+        border:solid 1px black;
+         padding:  5px 10px 5px 5px;
+        background-color: #e4f139;
+        font-weight: bold;
+         }
+
+         fieldset{
+              font-family:'Century Gothic';
+             font: 12px;
+             font-weight:bold;
+             margin: 0 0 100px 0;
+    background-color:white;
+        padding:  10px 15px 5px 50px;
+         width: 250px;
+
+      
+         
+         }
+
+          body {
+           background-color:#0f3569;
+        }
+
+                a:link, a:visited {
+  background-color: #1c58aa;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic'
+}
+                input.inputbuttonclass 
+         {
+              
+   display: inline-block;
+  position: relative;
+  text-align:center;
+    width: 8em;  
+    height: 3em;
+     margin-top:10px;
+      margin-right:10px;
+      
+   padding: 2vh;
+  cursor: pointer; 
+         }
+
+a:hover, a:active {
+  background-color: dimgrey;
+}
+
+.label {
+    width: 40%;
+    float: left;
+    font-weight:bold;
+     border-radius: 5px;
+        border:solid 2px black;
+         padding-top: 5px;
+        padding-bottom: 2px; 
+        padding-left: 10px;
+         padding-right: 10px;
+   background-color: #e4f139;
+
+}
+
+.namegroup input {
+   float:left;
+    display:inline-block
+}
+
+.banner 
+  {
+     padding: 10px;
+  text-align: center;
+  background: #e4f139;
+  color: black;
+  font-size: 25px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0 auto;
+  width: 20em;
+        
+  }
+
+
+           .statusgroup{
+              font-family:'Century Gothic';
+             font: 12px;
+             font-weight:bold;
+             margin: 0;
+    background-color:white;
+         padding: 25px;
+         width: 250px;
+        height:50px
+        
+        
+         }
+
+         input[type='radio'] {   
+    vertical-align: baseline;
+    padding: 10px;
+    margin: 10px;
+ }
+
+      
+
+            textarea {   
+    vertical-align: baseline;
+    padding: 10px;
+    margin: 10px;
+     resize: none;
+      width: 70%;
+ }

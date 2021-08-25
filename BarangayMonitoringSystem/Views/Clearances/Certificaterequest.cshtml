@@ -1,0 +1,61 @@
+﻿@model BarangayMonitoringSystem.Models.Clearances
+
+
+@{
+    Layout = null;
+    DateTime currentdate = (DateTime.Today);
+  string datepublished = currentdate.ToString("MMMM/dd/yyyy");
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Certificaterequest</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/documentui.css" />
+</head>
+<body>
+    <div>
+        <h4>Clearances</h4>
+        <hr />
+        <div class="documentissued">
+            <img src="~/Content/logobrgy1.png" alt="brgy" style="width:150px">
+            <b>
+                <p>Republic of the Philippines</p>
+                <p>Province of Pampanga</p>
+                <p>Angeles City</p>
+            </b>
+            <br />
+            <h2> Certificate of Residency</h2>
+            <p>
+                This is to certify that <b>@Html.DisplayFor(model => model.FullName)</b> whose signature appears below is
+a <b>PERMANENT RESIDENT</b> of this Barangay Sto.Cristo, Angeles City, Pampanga. </p>
+            <p>
+Based on the records of this office, she has been residing at Barangay Sto.Cristo, Angeles City, Pampanga.
+This CERTIFICATION is being issued upon the request of the above-named person of whatever legal purpose it may serve.
+                </p>
+            <p>
+Issued this <b>@datepublished</b> at Barangay Sto.Cristo, Angeles City, Pampanga.
+              
+            </p>
+            <br /><br />
+         <p>  Resident Signature:
+              _________________
+         </p>
+
+            <p>Sto.Cristo <br />
+               Barangay Captain <br />
+            Lazatin
+            
+                </p>
+
+        </div>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ClearanceId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+﻿<style>
+  
+ 
+   
+    h1 {font-size: 58px;}
+
+    h2{font-family:Bahnschrift}
+
+   a:link, a:visited {
+  background-color: #1c58aa;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic'
+}
+
+
+a:hover, a:active {
+  background-color: cornflowerblue;
+}
+    fieldset 
+    {
+        background-color:#158648;
+        padding: 0.35em 0.625em 0.75em;
+            margin: 0 2px;
+        border: 1px solid #c0c0c0;
+    }
+
+   
+
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #4d4d4d;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+</style>
+
+
+
+    
+        <div class="navbar navbar-inverse navbar-fixed-top" style= "background-color:#333 ">
+
+            <ul>
+                <li>  @Html.ActionLink("Cyphire Solutions", "Developersite", "Home", new { area = "" }, new { @Style = "background-color:#333" }) </li>
+                <li style="float:right"> @Html.ActionLink("Logout", "Login", "Login", new { area = "" }, new { @Style = "background-color:#333" }) </li>
+
+            </ul>
+</div>
+               
+    
+    
+   

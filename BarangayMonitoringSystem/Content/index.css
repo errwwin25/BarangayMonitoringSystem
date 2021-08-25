@@ -1,0 +1,103 @@
+  body { background-color: #5a5a5a}
+    
+    h1 {font-family: 'Bookman Old Style', Times, serif }
+    h1 {font-size: 40px;}
+
+    h3 {
+        
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:white;
+        font-size: 22px;
+           
+     }
+
+    h2
+    {
+        font-family:Bahnschrift
+
+    }
+
+   a:link, a:visited {
+  background-color: #1c58aa;
+  color: white !important;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic'
+}
+
+
+a:hover, a:active {
+  background-color: cornflowerblue;
+}
+    
+   
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: black;
+
+}
+   ol 
+   {
+       font-family: Arial, Helvetica, sans-serif;
+        margin: 4px;
+         font-size: 20px;
+          line-height: 1.6;
+   }
+
+li {
+  float: left;
+
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #4d4d4d;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.jumbotron 
+{
+    background-color:#3f9bff;
+         padding: 25px;
+            margin: 0 auto;
+            width: 800px;
+        border: 1px solid #c0c0c0;
+       }
+
+.bodytext 
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+
+}
+
+ .sidenav {
+  height: 100%;
+  width: 248px;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  margin-top: 105px;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 50px;
+   margin-left: 50px;
+ 
+}
+

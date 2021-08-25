@@ -1,0 +1,150 @@
+﻿@*@model IEnumerable<BarangayMonitoringSystem.Models.Blotterreports> *@
+@using PagedList.Mvc;
+@model PagedList.IPagedList<BarangayMonitoringSystem.Models.Blotterreports>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+   <style>
+        a {
+           color:white;
+            text-decoration: none;
+       }
+   a:link, a:visited, a:hover, a:focus, a:active 
+     {
+       text-decoration: none;
+  color: white;
+  font-family:'Century Gothic';
+
+      }
+
+
+   </style>
+
+   <link rel="stylesheet" type="text/css" href="~/Content/indexcrud.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/PagedList.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/jquery.datetimepicker.min.css" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebarlogo"> <img src="~/Content/logobrgy1.png" alt="brgy" style="width:170px" id="sidebarlogo"></div>
+        <ul>
+      <li>  @Html.ActionLink("Dashboard", "Index", "Home") </li>
+            <li> @Html.ActionLink("Resident Records", "Index", "ResidentRegisters") </li>
+            <li>  @Html.ActionLink("Issuance of Clearances", "Index", "Clearances") </li>
+            <li> @Html.ActionLink("Incident Reports", "Index", "Blotterreports", new { @Style = "background-color:green" })        </li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+            <li> @Html.ActionLink("Logout", "Login1", "Login")</li>
+            
+</ul>
+    </div>
+   
+    <div style="margin-left:25%" id="jumbotron">
+      
+        @Html.ActionLink("Create New Incident Report", "Create")
+    </div>
+
+    @using (Html.BeginForm("Index", "Blotterreports", FormMethod.Get))
+    {
+        <div style="margin-left:25% " id="searchfunction">
+            <p class="searchfunction">
+                <b> Search Incident:</b> @Html.TextBox("SearchString")
+                <input type="submit" value="Search" class="inputbuttonclass" />
+
+                @Html.ActionLink("Reset", "Index")
+            </p>
+        </div>
+    }
+
+    <center>
+        <table class="table" id="residents"  style="margin-left:25% ">
+            <tr>
+                <th>
+                    @Html.ActionLink("Incident Number", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+             
+                <th>
+                  @Html.ActionLink("Full Name", "Index")
+                </th>
+              
+                <th>
+                    @Html.ActionLink("Incident Location", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.ActionLink("Incident Type", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.ActionLink("Status", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+
+                <th>
+                    @Html.ActionLink("Date Reported", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter,  type = "datetime-local" } )
+                </th>
+                <th>
+                    @Html.ActionLink("Date of Incident", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th>
+                    @Html.ActionLink("Remarks", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter })
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Blotternumber)
+                    </td>
+                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FullName)
+                    </td>
+                  
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Incidentlocation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Incidenttype)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Datereported, new { @value = DateTime.Today, @readonly = "readonly" })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateIncident)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remarks)
+                    </td>
+                    <td>
+                        <div id="crudbuttons">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Blotternumber }, new { @Style= "background-color:blue" })
+                            @Html.ActionLink("Details", "Details", new { id = item.Blotternumber }, new { @Style = "background-color:green" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Blotternumber }, new { @Style = "background-color:red" })
+                        </div>
+                    </td>
+                </tr>
+            }
+            
+        </table>
+        </center>
+    <div style="margin-left:50%" class="pagination">
+        <p class="pagebar">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+        </p>
+    </div>
+   
+</body>
+</html>

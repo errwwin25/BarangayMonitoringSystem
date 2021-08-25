@@ -1,0 +1,203 @@
+﻿        body { background-color: #5a5a5a}
+
+  
+
+    .jumbotron 
+{
+     font-family: 'Century Gothic';
+    background-color:#3f9bff;
+         padding: 20px;
+            margin: 0 auto;
+            width: 200em;
+        border: 1px solid #c0c0c0;
+        
+       }
+
+  #jumbotron a {
+   background-color: #1c58aa;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic';
+      margin-bottom:10px;
+       border: 2px solid black;
+
+}
+
+  #jumbotron a:hover, a:active {
+  background-color: gray;
+}
+
+  li{
+    
+      margin-bottom:20px;
+      
+  }
+   ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #111;
+  
+
+}
+  .sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+  font-family: 'Century Gothic';
+}
+
+    .sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+ 
+}
+ 
+ .sidebar a:hover, a:active {
+  color: gray;
+  background-color: #111;
+}
+
+
+      #crudbuttons a 
+  {
+      width:55px;
+      background-color: #242d93;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic';
+  margin-bottom:5px;
+  margin-top:5px;
+  }
+         
+  #crudbuttons a:hover, a:active {
+  background-color: dimgrey;
+
+}
+  
+     .searchfunction 
+{
+     font-family: 'Century Gothic';
+    background-color:#3f9bff;
+         padding: 2px;
+         padding-left:10px;
+            width: 500px;
+        border: 1px solid #c0c0c0;
+        
+       }
+
+  #searchfunction a {
+   background-color: #1c58aa;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  margin-top:20px;
+  height:20px;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic';
+      margin-bottom:10px;
+       border: 1px solid black;
+       font-size: 16px;
+
+}
+
+  #searchfunction a:hover, a:active {
+  background-color: dimgrey;
+}
+
+      input.inputbuttonclass 
+         {
+              
+   display: inline-block;
+  position: relative;
+  text-align:center;
+    width: 6em;  
+    height: 33px;
+   padding: 5px;
+  cursor: pointer; 
+         }
+
+    
+
+      .listofresidents
+      {
+            font-family: 'Century Gothic';
+    background-color:#3f9bff;
+         padding: 20px;
+        margin-left:60em;
+  clear: both;
+  width: 3em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+      }
+        .flex-container >  .residentlist 
+{
+     font-family: 'Century Gothic';
+    background-color:#3f9bff;
+         padding: 5px;
+            margin-left:55em;
+            width: 25em;
+    
+        border: 1px solid #c0c0c0;
+       
+       }
+
+          .flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+    margin-left:15em;
+}
+          #residents {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 280px;
+ 
+  
+}
+
+#residents td, #residents th {
+  border: 1px solid #ddd;
+  padding: 10px;
+
+}
+
+#residents th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #005467;
+  color: white;
+}
+
+#residents tr{background-color: #f2f2f2;}
+
+#residents tr:hover {background-color: #ddd;}
+
+  .pagebar 
+{
+     font-family: 'Century Gothic';
+    background-color:#3f9bff;
+         padding: 20px;
+            margin: 0 auto;
+            width: 10em;
+        border: 1px solid #c0c0c0;
+        
+       }

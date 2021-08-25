@@ -1,0 +1,95 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contact</title>
+    <style>
+       body { background-color: #5a5a5a}
+
+            .sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+ 
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+  font-family: 'Century Gothic';
+}
+
+.sidenav a:hover {
+  color: #818181;
+}
+
+
+.jumbotron 
+{
+    background-color:#3f9bff;
+         padding: 20px;
+            margin: 0 auto;
+            width: 800px;
+        border: 1px solid #c0c0c0;
+       }
+ 
+a.buttonclass {
+  background-color: #333;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family:'Century Gothic'
+}
+
+
+    </style>
+</head>
+<body>
+    @{ Html.RenderPartial("Verticalbar"); }
+
+    <div class="sidenav">
+        <ul>
+            <li> @Html.ActionLink("Dashboard", "Index", "Home") </li>
+            <li> @Html.ActionLink("Resident Information", "Index", "ResidentRegisters")</li>
+            <li>   @Html.ActionLink("Incident Reports", "Index", "Blotterreports")</li>
+            <li> @Html.ActionLink("About", "About", "Home") </li>
+            <li> @Html.ActionLink("Contact", "Contact", "Home", new { @Style = "background-color:green" })</li>
+
+        </ul>
+    </div>
+
+    <div class="jumbotron">
+
+
+        <left> <h2> Inquiries: </h2></left>
+        <left> <h4>Questions? No problem.</h4></left>
+        <left>
+            <p class="bodytext">
+                Visit the official developer site at the press of this button.
+            </p>
+
+            @Html.ActionLink("Visit Us!", "Developersite", "Home", new { area = "" }, new {@class = "buttonclass" }) 
+        </left>
+
+
+    </div>
+
+</body>
+</html>

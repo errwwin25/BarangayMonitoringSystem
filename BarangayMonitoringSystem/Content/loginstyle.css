@@ -1,0 +1,78 @@
+﻿ 
+            .block {
+                display: block;
+                width: 10%;
+                border: none;
+                background-color: #4CAF50;
+                padding: 14px 28px;
+                font-size: 16px;
+                cursor: pointer;
+                text-align: center;
+                border: 2px solid black;
+            }
+
+                .block:hover {
+                    background-color: #d3cfcf;
+                }
+
+            body {
+                background-color: #313866;
+            }
+
+            h4 {
+                font-family: Verdana;
+                color: white;
+            }
+
+            h2 {
+                font-family: 'Courier';
+                color: white;
+            }
+
+          
+            .wronglogin 
+            {
+                font-family:Arial, Helvetica, sans-serif;
+                font:16px;
+                color: red;
+            }
+
+            #login {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
+  border-collapse: collapse;
+  width: 100px;
+}
+
+#login td, #login th {
+  border: 1px solid #ddd;
+  padding: 20px;
+ text-align:center
+}
+
+#login tr{background-color: #f2f2f2;}
+
+
+
+#login th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+ 
+  color: white;
+}
+         
+                input.inputbuttonclass 
+         {
+              
+   display: inline-block;
+  position: relative;
+  text-align:center;
+    width: 8em;  
+    height: 3em;
+     margin-top:10px;
+      margin-right:10px;
+      
+   padding: 2vh;
+  cursor: pointer; 
+         }

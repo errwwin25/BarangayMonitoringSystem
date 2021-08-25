@@ -1,0 +1,104 @@
+﻿@model BarangayMonitoringSystem.Models.Clearances
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/documentui.css" />
+</head>
+<body>
+
+    <div class="jumbotron">
+        <h4>Clearances</h4>
+        <hr />
+
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ClearanceId }) |
+            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Request for Issuance", "Certificaterequest", new { id = Model.ClearanceId }, new { @Style = "background-color:green" })
+            @Html.ActionLink("Request for Clearance", "Clearancerequest", new { id = Model.ClearanceId }, new { @Style = "background-color:green" })
+        </p>
+
+      
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ResidentId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ResidentId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FullName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Residentfirstname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Residentfirstname)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Residentmiddlename)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Residentmiddlename)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Residentlastname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Residentlastname)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cedula)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cedula)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BarangayId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BarangayId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RegisteredVoter)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RegisteredVoter)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BGClearance)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BGClearance)
+            </dd>
+
+        </dl>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<style>
+
+     .sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+ 
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f1f1f1;
+  display: block;
+  font-family: 'Century Gothic';
+}
+
+
+.sidenav a:hover {
+  color: #818181;
+}
+
+.main {
+  margin-left: 160px; 
+  font-size: 28px; 
+  padding: 0px 10px;
+}
+
+ ul {
+  list-style-type: none;
+
+}
+
+    </style>
+
+<div class="sidenav">
+     <ul>
+            <li> @Html.ActionLink("Dashboard", "Index", "Home") </li>
+            <li> @Html.ActionLink("Resident Information", "Resident", "Resident")</li>
+            <li>   @Html.ActionLink("Blotter Reports", "Blotter", "Blotter")</li>
+            <li> @Html.ActionLink("About", "About", "Home") </li>
+           
+
+        </ul>
+</div>
